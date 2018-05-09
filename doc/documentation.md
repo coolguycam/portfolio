@@ -1,6 +1,5 @@
 # Parallaxify
 ### add depth to your project
-[![CDNJS](https://img.shields.io/cdnjs/v/parallaxify.svg)](https://cdnjs.com/libraries/parallaxify)
 
 *parallaxify* is a jQuery plugin that adds parallax effects to elements and backgrounds based on gyroscope sensor (device orientation) data or mouse movement. Due to the recent hype started due to the introduction of a parallax effect in iOS 7, I created a plugin that allows anyone to easily incorporate parallax effects to their websites.
 
@@ -11,30 +10,17 @@
 
 ## Download
 
-Get the [minified](https://raw.github.com/hwthorn/parallaxify/master/jquery.parallaxify.min.js) version or the [source](https://raw.github.com/hwthorn/parallaxify/master/jquery.parallaxify.js) here.
+Get the [development](https://raw.github.com/hwthorn/parallax/master/jquery.parallax.js) or [production](https://raw.github.com/hwthorn/parallax/master/jquery.parallax.js) version here.
 
 ## Get things going
 
-In order to add a parallax effect to any element you can run `.parallaxify()` on the wrapper of an element or run it globally on 'window':
+In order to add a parallax effect to any element you can run `.parralaxify()` on the element or run it globally on 'window':
 
 ``` js
     // Run it on single element
-    $('#my-wrapper').parallaxify();
+    $('#my-element').parallaxify();
     // or globally
     $.parallaxify();
-```
-
-You can also run `.parallaxify()` on the fly, e.g. for hover effects and destroy the instance on blur using the built-in destroy method (Thanks to [matlembo](https://github.com/matlembo) for pointing out the following example - see https://github.com/hwthorn/parallaxify/issues/2 ):
-
-``` js
-$('#my-element').hover(
-    function(){
-        $(this).parallaxify(args);
-    },
-    function(){
-        $(this).parallaxify('destroy');
-    }
-);
 ```
 
 The horizontal and vertical distances that each element can or should travel can be defined through attributes as follows:
@@ -93,10 +79,6 @@ These are all settings that can be configured as part of the plugin:
         // options include 'natural', 'linear', 'gaussian', or 'performance'
         motionType: 'natural',
         mouseMotionType: 'gaussian',
-		
-		// define which sensor input has priority over the other
-		// options are either 'mouse' or 'gyroscope'
-		inputPriority: 'mouse',
         
         // define the delta angle (0 < motionAngle < 90) 
         // that is used to render max parallax in this direction
@@ -173,7 +155,7 @@ Similarly to the positioning you can write your own function to fit your needs:
 ```
 
 The following graph plots the `linear` (blue), `natural` (red), and `gaussian` (green) alogrithm for `motionAngleX: 85`:
-![plot of algorithms](https://raw.github.com/hwthorn/parallaxify/master/doc/plot.png "Plot of algorithms: linear (blue), natural (red), gaussian (green)")
+![plot of algorithms](http://hwthorn.github.io/parallaxify/doc/plot.png "Plot of algorithms: linear (blue), natural (red), gaussian (green)")
 
 ## License
 
